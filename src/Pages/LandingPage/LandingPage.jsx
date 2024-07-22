@@ -1,9 +1,10 @@
 import React from 'react'
 import Header from '../../Componet/Header'
 import { Hero } from '../../Componet/Hero'
-import AboutUs from '../../Componet/About'
+import { About } from '../../Componet/About'
 import { Footer } from '../../Componet/Footer'
 import { TrustBadges } from '../../Componet/TrustPage'
+import { BenefitsAndCTA } from '../../Componet/Benefit'
 
 const LandingPage = () => {
   return (
@@ -11,7 +12,8 @@ const LandingPage = () => {
     
     <Header />
     <Hero />
-    <AboutUs />
+<About />
+    <BenefitsAndCTA />
     <TrustBadges />
     <Footer />
     
