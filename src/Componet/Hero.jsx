@@ -20,10 +20,10 @@ export const Hero = () => {
             </p>
           </div>
           <div className="space-x-4 flex w-full my-4 rounded-[10px]">
-            <button className="bg-bl border-2 border-yellow-500 flex rounded-[20px] text-[12px] w-[100%] justify-center items-center h-[2.3rem] hover:bg-blue-700 text-white transition duration-300 transform hover:scale-105">
+            <button className="bg-bl border-2 border-yellow-500 flex rounded-[20px] text-[12px] w-[100%] justify-center items-center h-[2.5rem] hover:bg-blue-700 text-white transition duration-300 transform hover:scale-105">
               Start Shopping
             </button>
-            <button className="bg-yellow-500 hover:bg-yellow-700 rounded-[20px] text-white text-[12px] w-[100%] justify-center items-center h-[2.3rem] transition duration-300 transform hover:scale-105">
+            <button className="bg-yellow-500 hover:bg-yellow-700 rounded-[20px] text-white text-[12px] w-[100%] justify-center items-center h-[2.5rem] transition duration-300 transform hover:scale-105">
               Explore Categories
             </button>
           </div>
