@@ -29,8 +29,12 @@ export const BenefitsAndCTA = () => {
     <section className="py-16 bg-gra-100">
       <div className="container mx-auto px-4">
         
-        <h2 className="text-xl font-bold t mb-5">Why Choose <span className="bg-yellow-500 text-white p-2">E_Shoppy</span> </h2>
-
+      <h2 className="text-xl font-bold mb-5">
+    Why Choose<span className="bg-yellow-500 text-white p-2">CryptoCart</span>{" "}
+  </h2>
+  <p className="text-base mt-4 mb-4 text-gray-600">
+    E_Shoppy offers a wide range of high-quality products at competitive prices. Our user-friendly interface ensures a smooth shopping experience, and our dedicated customer support team is always ready to assist you. We value your trust and strive to provide the best service possible.
+  </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-white p-6 border border-yellow-500 rounded-lg shado-md text-center">
