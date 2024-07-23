@@ -6,8 +6,9 @@ export const About = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-xl font-bold t mb-5">
-          About <span className="bg-yellow-500 text-white p-2">E_Shoppy</span>{" "}
+          About <span className="bg-yellow-500 text-white p-2">CryptoCart</span>{" "}
         </h2>
+    
         <div className="flex flex-col md:flex-row items-center mb-12">
           <div className="md:w-1/2">
             <p className="text-[14px] mb-">

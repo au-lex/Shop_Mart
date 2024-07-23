@@ -129,12 +129,13 @@ const Header = () => {
     <main className="fixed w-full z-50  bg-white border shadow h-[4rem]">
     <section className="flex items-center  justify-between px-2 h-[4rem] space-x-3">
 
-        <span className="flex">
-          <SiShopware className="text-[28px] w-10 text-yellow-500 " />
-      <h1 className="text-2xl font-extrabold text-blue==-500">
-        E<span className="text-yellow-500">_</span>Shoppy
-      </h1>
-        </span>
+    <span className="flex items-center">
+  <SiShopware className="text-[28px] w-10 text-yellow-500" />
+  <h1 className="text-2xl font-extrabold text-blu-500">
+    Crypto<span className="text-yellow-500">Cart</span>
+  </h1>
+</span>
+
         <section className="flex items-center pt-1 space-x-4">
               {/* <button className="bg-white text-[#198754] px-3 py-2 rounded-md font-medium hover:bg-opacity-90 transition duration-300 flex items-center">
                 <RiCoinLine className="mr-2" />
