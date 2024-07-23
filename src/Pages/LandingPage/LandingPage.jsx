@@ -9,7 +9,8 @@ import { BenefitsAndCTA } from '../../Componet/Benefit'
 const LandingPage = () => {
   return (
     <>
-    
+    <div className="bg bg-[#f7f6f0]">
+
     <Header />
     <Hero />
 <About />
@@ -17,6 +18,7 @@ const LandingPage = () => {
     <TrustBadges />
     <Footer />
     
+    </div>
     </>
   )
 }
