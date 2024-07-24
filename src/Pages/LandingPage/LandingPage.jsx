@@ -5,6 +5,7 @@ import { About } from '../../Componet/About'
 import { Footer } from '../../Componet/Footer'
 import { TrustBadges } from '../../Componet/TrustPage'
 import { BenefitsAndCTA } from '../../Componet/Benefit'
+import FaqComponent from '../../Componet/Faq'
 
 const LandingPage = () => {
   return (
@@ -16,6 +17,7 @@ const LandingPage = () => {
 <About />
     <BenefitsAndCTA />
     <TrustBadges />
+    <FaqComponent/>
     <Footer />
     
     </div>
