@@ -4,7 +4,7 @@ import { FaShoppingCart, FaUsers, FaGlobe } from "react-icons/fa";
 export const About = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto text-center px-4">
         <h2 className="text-xl font-bold t mb-5">
           About <span className="bg-yellow-500 text-white p-2">CryptoCart</span>{" "}
         </h2>
