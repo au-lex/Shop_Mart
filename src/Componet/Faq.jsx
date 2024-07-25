@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
 
 const faqData = [
   {
@@ -37,34 +38,31 @@ const FaqComponent = () => {
 
   return (
     <div className="flex flex-col items-center px-4 pt-2 bg-white min-h-screen">
-
-<div className="mt-10">
+      <div className="mt-10">
         <img
-          src="https://pandamarketors.com/wp-content/uploads/2024/07/Untitled-design-67.png"
+          src="https://img.freepik.com/premium-photo/3d-faq-illustration_541443-4056.jpg"
           alt="3D illustration"
-          className="transform transition-transform duration-500 hover:scale-110"
+          className="transform transition-transform h-[150px] w-full object-cover duration-500 hover:scale-110"
         />
       </div>
       <div className="max-w-4xl w-full mb-6">
-        <h1 className="text-3xl font-extrabold mb-4 text-center text-red-600">FAQs</h1>
-        {/* <h2 className="text-xl font-bold mb-4 text-center">Frequently Asked Questions</h2> */}
         {faqData.map((faq, index) => (
-          <div key={index} className="mb4 border">
+          <div key={index} className="mb-4 border-b">
             <button
-              className="w-full text-left p-4 bg-white  focus:outline-none"
+              className="w-full flex justify-between items-center text-left p-4 bg-white focus:outline-none"
               onClick={() => toggleFaq(index)}
             >
-              <span className="text- font-semibold">{faq.question}</span>
+              <span className="text-lg font-semibold">{faq.question}</span>
+              <FaChevronDown className={`transition-transform duration-300 ${activeIndex === index ? 'transform rotate-180 text-yellow-500' : 'text-yellow-500'}`} />
             </button>
             {activeIndex === index && (
               <div className="p-4 bg-white rounded-md shadow-md mt-2">
-                <p>{faq.answer}</p>
+                <p className="text-sm">{faq.answer}</p>
               </div>
             )}
           </div>
         ))}
       </div>
-     
     </div>
   );
 };
