@@ -7,15 +7,15 @@ import 'tailwindcss/tailwind.css';
 const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-white">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white">
+      <div className="w-full max-w-md p-8  bg-white">
         <span className="flex items-center justify-center">
           <SiShopware className="text-[28px] w-10 text-yellow-500" />
           <h1 className="text-2xl font-extrabold text-blu-500">
             Crypto<span className="text-yellow-500">Cart</span>
           </h1>
         </span>
-        <h2 className="text-2xl font-bold text-center">Welcome Back!</h2>
-        <p className="text-center text-gray-600">
+        <h2 className="text-[17px] font-bold text-center mt-6 leading-2px]">Welcome Back!</h2>
+        <p className="text-center text-gray-600 text-[12px]">
           Please login to your account to continue. If you don't have an account, you can create one.
         </p>
         <form className="mt-8 space-y-6">

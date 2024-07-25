@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+
+// import { FaLaptop, FaMobileAlt, FaTabletAlt, FaHeadphones, FaCamera, FaTv,  FaServer } from 'react-icons/fa';
+import { FaLaptop, FaMobileAlt, FaTabletAlt, FaHeadphones, FaCamera, FaTv,  FaServer, FaDesktop } from 'react-icons/fa';
+
 import { 
   RiHomeSmileLine,
   RiShoppingCartLine,
@@ -15,6 +19,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { AiOutlineAppstore } from "react-icons/ai";
 import { CgMenuGridO } from "react-icons/cg";
 import { RiMenu5Fill } from "react-icons/ri";
+import { GiRunningShoe } from "react-icons/gi";
 
 const UserHeader = () => {
   const [activeLink, setActiveLink] = useState('');
@@ -42,6 +47,24 @@ const UserHeader = () => {
     { name: "Settings", path: "/settings", icon: IoSettingsOutline  }, // Replaced Notification with Settings
     
   ];
+
+
+
+
+
+  const products = [
+    { name: 'Laptops', icon: <FaLaptop className="text-blue-500" />, link: '/products/laptop' },
+    { name: 'Mobile Phones', icon: <FaMobileAlt className="text-green-500" />, link: '/products/mobile' },
+    { name: 'Tablets', icon: <FaTabletAlt className="text-purple-500" />, link: '/products/tablet' },
+    { name: 'Headphones', icon: <FaHeadphones className="text-red-500" />, link: '/products/headphones' },
+    { name: 'Cameras', icon: <FaCamera className="text-yellow-500" />, link: '/products/camera' },
+    // { name: 'Televisions', icon: <FaTv className="text-indigo-500" />, link: '/products/tv' },
+    // { name: 'Watches', icon: <FaWatch className="text-pink-500" />, link: '/products/watch' },
+    { name: 'Servers', icon: <FaServer className="text-orange-500" />, link: '/products/server' },
+    { name: 'Monitors', icon: <FaDesktop className="text-cyan-500" />, link: '/products/monitor' },
+    { name: 'Sneakers', icon: <GiRunningShoe className="text-blue-500" />, link: '/products/speaker' }
+  ];
+
   return (
     <>
       {/* Normal header */}
@@ -54,7 +77,7 @@ const UserHeader = () => {
       )}
       <section className=" fixed w-full h-[9rem]  border-b flex flex-col items-center p-4">
         <div className="flex items-center justify-between w-full max-w-4xl">
-          <RiMenu5Fill  onClick={handleOpenSide} className="text-3xl text-gray-600 borderder-2 cursor-pointer" />
+          <RiMenu5Fill  onClick={handleOpenSide} className="text-3xl border bor   shadow p-1 rounded text-yellow-600 borderder-2 cursor-pointer" />
           <span className="flex items-center space-x-2">
             <SiShopware className="text-[28px] w-10 text-yellow-500" />
             <h1 className="text-2xl font-extrabold ">
@@ -113,9 +136,16 @@ const UserHeader = () => {
         <section 
           className={`fixed inset-x-0 bottom-0 z-50 w-full bg-white shadow-lg transform ${openSide ? 'translate-y-0' : 'translate-y-full'} transition-transform duration-300 ease-in-out`}
         >
-          <div className="p-4 h-[20rem]">
-            <h2 className="text-lg font-bold">Menu</h2>
-            {/* Your menu content goes here */}
+          <div className="p-4 h-[24rem]">
+            <h2 className="text-[17px] my-2 font-bold">Quick Links</h2>
+            <ul className="space-y-4">
+            {products.map((product, index) => (
+              <li key={index} className="flex items-center space-x-3">
+                {product.icon}
+                <Link to={product.link} className="text-gray-800 hover:text-blue-500">{product.name}</Link>
+              </li>
+            ))}
+          </ul>
           </div>
         </section>
       </div>
