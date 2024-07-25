@@ -76,7 +76,9 @@ const Header = () => {
       )}
 
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 right-0 z-50 w-64  bg-white shadow-lg transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
+      <div className={`fixed inset-y-0 right-0 z-50 w-64 
+         bg-white shadow-lg transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} 
+         transition-transform duration-300 ease-in-out`}>
         <div className="p-5 pt-[5rem]">
           <button onClick={toggleSidebar} className="absolute top-4 outline-0 right-4">
             <RiCloseLine className="text-2xl text-gray-600" />
