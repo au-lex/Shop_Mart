@@ -10,6 +10,8 @@ import {
 
 
 import LandingPage from "./Pages/LandingPage/LandingPage";
+import Login from "./Pages/Login/Login";
+import UserDashboard from "./Pages/User/UserDashboard";
 
 
 
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage/>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
+  },
+  {
+    path: "/user",
+    element: <UserDashboard/>,
   },
 
  
