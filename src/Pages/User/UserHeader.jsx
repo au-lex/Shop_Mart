@@ -40,7 +40,7 @@ const UserHeader = () => {
   const savedCount = 10; // Add count for saved items
 
   const navItems = [
-    { name: "Home", path: "/user", icon: RiHomeSmileLine },
+    { name: "Home", path: "/shop", icon: RiHomeSmileLine },
     { name: "Cart", path: "/cart", icon: RiShoppingCartLine, count: cartCount },
     { name: "Orders", path: "/orders", icon: RiOrderPlayLine, count: ordersCount },
     { name: "Saved", path: "/saved", icon: RiHeartLine, count: savedCount },
@@ -71,19 +71,19 @@ const UserHeader = () => {
 
       {openSide && (
  <div 
- className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ease-in-out"
+ className="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out"
  onClick={handleOpenSide}
 ></div>
       )}
-      <section className=" fixed w-full h-[9rem]  border-b flex flex-col items-center p-4">
+      <section className=" fixed w-full h-[9rem] bg-white  border-b flex flex-col items-center p-4">
         <div className="flex items-center justify-between w-full max-w-4xl">
-          <RiMenu5Fill  onClick={handleOpenSide} className="text-3xl border bor   shadow p-1 rounded text-yellow-600 borderder-2 cursor-pointer" />
-          <span className="flex items-center space-x-2">
+          <GrAppsRounded onClick={handleOpenSide} className="text-3xl border bor   shadow p-1 rounded text-yellow-600 borderder-2 cursor-pointer" />
+          <Link to ="/" className="flex items-center space-x-2">
             <SiShopware className="text-[28px] w-10 text-yellow-500" />
             <h1 className="text-2xl font-extrabold ">
               Crypto<span className="text-yellow-500">Cart</span>
             </h1>
-          </span>
+          </Link>
           <img 
             src="https://img.freepik.com/premium-photo/pixar-style-3d-cartoon-character-with-blue-glasses-cap_899449-44846.jpg"
             alt="user" 
