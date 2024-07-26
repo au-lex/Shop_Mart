@@ -71,7 +71,7 @@ const UserHeader = () => {
 
       {openSide && (
  <div 
- className="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out"
+ className="fixed inset-0 bg-black bg-opacity-50 bg-whitw z-50 transition-opacity duration-300 ease-in-out"
  onClick={handleOpenSide}
 ></div>
       )}
