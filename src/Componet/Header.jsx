@@ -31,7 +31,7 @@ const Header = () => {
   const sidebarItems = [
     { name: "Fund Account", path: "/fund-account", icon: RiCoinLine },
     // { name: "Transactions", path: "/transactions", icon: RiExchangeDollarLine },
-    { name: "Shop", path: "/schedule", icon:  HiOutlineShoppingBag },
+    { name: "Shop", path: "/shop", icon:  HiOutlineShoppingBag },
     // { name: "Cards", path: "/cards", icon: FaCreditCard },
     { name: "Login", path: "/login", icon: RiLoginCircleLine },
     { name: "Signup", path: "/signup", icon: RiUserAddLine },
