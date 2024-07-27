@@ -4,7 +4,8 @@ import UserHero from './UserHero'
 import Ok from './Featured'
 import Deals from "./Deals"
 import Featured from './Featured'
-
+import Footer from "../../Componet/Footer"
+import RecentlyAdded from './Recent'
 const UserDashboard = () => {
   return (
     <>
@@ -14,6 +15,8 @@ const UserDashboard = () => {
 <Featured/>
 
 <Deals />
+<RecentlyAdded/>
+<Footer />
 
     </>
   )

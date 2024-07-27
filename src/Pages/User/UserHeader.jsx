@@ -75,9 +75,9 @@ const UserHeader = () => {
  onClick={handleOpenSide}
 ></div>
       )}
-      <section className=" fixed w-full h-[9rem] bg-white  border-b flex flex-col items-center p-4">
+      <section className=" fixed w-full h-[9rem] bg-white z-50  border-b flex flex-col items-center p-4">
         <div className="flex items-center justify-between w-full max-w-4xl">
-          <GrAppsRounded onClick={handleOpenSide} className="text-3xl border bor   shadow p-1 rounded text-yellow-600 borderder-2 cursor-pointer" />
+          < RiMenu5Fill onClick={handleOpenSide} className="text-4xl border bor   sadow p-1 rounded text-yellow-600 borderder-2 cursor-pointer" />
           <Link to ="/" className="flex items-center space-x-2">
             <SiShopware className="text-[28px] w-10 text-yellow-500" />
             <h1 className="text-2xl font-extrabold ">
