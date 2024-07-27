@@ -35,67 +35,50 @@ const Deals = () => {
       originalPrice: 299.99,
       dealPrice: 199.99,
       image: "https://garamart.com/wp-content/uploads/2022/05/Picun-W16B-TWS-Headphones-300x300.jpg.webp",
-      discount: 33
+      discount: 33,
+      description: "Experience crystal-clear sound with our Premium Wireless Headphones. Featuring active noise cancellation, 30-hour battery life, and comfortable over-ear design for all-day listening."
     },
-    // {
-    //   id: 2,
-    //   name: "Premium Wireless Headphones",
-    //   originalPrice: 299.99,
-    //   dealPrice: 199.99,
-    //   image: "https://shopnest.africa/wp-content/uploads/2024/07/221227150011296073-300x300.webp",
-    //   discount: 33
-    // },
     {
       id: 2,
       name: "Noise-Cancelling Earbuds",
       originalPrice: 199.99,
       dealPrice: 149.99,
       image: "https://garamart.com/wp-content/uploads/2022/04/ANC-03LX-Black-300x300.png.webp",
-      discount: 25
+      discount: 25,
+      description: "Immerse yourself in your music with these compact Noise-Cancelling Earbuds. Enjoy true wireless freedom, advanced noise cancellation, and up to 8 hours of playtime on a single charge."
     },
-    // Add more deals here if you want to test scrolling
   ];
 
   return (
     <section className="py-12">
       <div className="c">
-       
         <div className="">
-          <div className=" px-[1rem]   w-full">
+          <div className="px-[1rem] w-full">
             {deals.map(deal => (
-              <div key={deal.id} className="bg-white mb-[2em] w-[100%] p-2
-               border-yellow-500 rounded-lg border shadow-lg overflow-hidden" >
-
-<section className="desc ">
-
-<section className="">
-            <div className=" z-10 bg-red-500 text-white
-              p-2 rounded-bl-lg  rounded-t-lg flex justify-center items-center">
-                <span className="block"></span>
-              <FaHotjar className="mr-2" />
-              <span className="font-bold"> Today's Hot Deal</span>
-              <div className="">
-  <div className="flex items-center justify-end mb4">
-    <FaClock className="text-red-500 mr-2" />
-    <span className="text-xl font-bold text-white">
-      {`${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}`}
-    </span>
-  </div>
-  
-</div>
-            </div>
-           </section>
-{/* <h2 className=" text-right  font-bold mb-1 ">Today's Hot Deals</h2> */}
-
-</section>
-                <div className=" flex justify-center ">
+              <div key={deal.id} className="bg-white mb-[2em] w-[100%] p-2 border-yellow-500 rounded-lg border shadow-lg overflow-hidden">
+                <section className="desc">
+                  <section className="">
+                    <div className="z-10 bg-yellow-500 text-white p-2 rounded-bl-lg rounded-t-lg flex justify-center space-x-4 items-center">
+                      <span className="block"></span>
+                      <FaHotjar className="mr-2" />
+                      <span className="font-bold"> Today's Hot Deal</span>
+                      <div className="">
+                        <div className="flex items-center  justify-end mb4">
+                          {/* <FaClock className="text-red-500 mr-2" /> */}
+                          <span className="text-xl font-bold text-white">
+                            {`${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}`}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </section>
+                <div className="flex justify-center">
                   <img src={deal.image} alt={deal.name} className="w-[200px] h-[200px] object-cover" />
-                  {/* <div className="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-bl-lg">
-                    {deal.discount}% OFF
-                  </div> */}
                 </div>
-                <div className="p-">
-                  <h3 className="text-[15px] font-bold mb-2">{deal.name}</h3>
+                <div className="p-4">
+                  <h3 className="text-[18px] font-bold mb-2">{deal.name}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{deal.description}</p>
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <span className="text-3xl font-bold text-yellow-500">${deal.dealPrice.toFixed(2)}</span>
@@ -103,7 +86,7 @@ const Deals = () => {
                     </div>
                     {/* <span className="bg-green-500 text-white px-2 py-1 rounded-full text-sm">Save ${(deal.originalPrice - deal.dealPrice).toFixed(2)}</span> */}
                   </div>
-                  <button className="w-full bg-ye-500 text-yellow-500 border-yellow-500 border hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-full transition duration-300 flex items-center justify-center">
+                  <button className="w-full bg-yellow-500 text-white border-yellow-500 border hover:bg-yellow-600 font-bold py-3 px-4 rounded-full transition duration-300 flex items-center justify-center">
                     <FaShoppingCart className="mr-2" />
                     Add to Cart
                   </button>

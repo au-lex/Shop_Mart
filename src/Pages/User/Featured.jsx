@@ -17,15 +17,17 @@ const Featured = () => {
   const featuredProducts = [
     { id: 1, name: "Premium headphones", sub :"Electronics", price: 29.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/220916160021352331-300x300.webp" },
     { id: 2, name: " Suitable Laptop stand", sub :"Accessories", price: 39.99, image: "https://shopnest.africa/wp-content/uploads/2024/04/unnamed-file-46-300x300.jpg" },
+    { id: 3, name: " Canyon Bluetooth", sub :"Accessories", price: 39.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/230309080910252110-300x300.webp" },
+    { id: 4, name: " Wireless Mouse", sub :"Accessories", price: 30.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/221123150033194311-300x300.webp" },
   ];
 
   const saleProducts = [
-    { id: 1, name: "Sale Item 1", originalPrice: 49.99, salePrice: 39.99, image: "https://placekitten.com/202/202" },
+    { id: 1, name: "Sale Item 1", originalPrice: 49.99, salePrice: 39.99, image: "https://shopnest.africa/wp-content/uploads/2024/05/chrome-heart-sunglass-300x300.jpg" },
     { id: 2, name: "Sale Item 2", originalPrice: 59.99, salePrice: 44.99, image: "https://placekitten.com/203/203" },
   ];
 
   const topRatedProducts = [
-    { id: 1, name: "Top Rated 1", price: 34.99, rating: 4.5, reviewCount: 120, image: "https://placekitten.com/204/204" },
+    { id: 1, name: "Top Rated 1", price: 34.99, rating: 4.5, reviewCount: 120, image: "https://shopnest.africa/wp-content/uploads/2024/04/unnamed-file-50-300x300.jpg" },
     { id: 2, name: "Top Rated 2", price: 54.99, rating: 5, reviewCount: 89, image: "https://placekitten.com/205/205" },
   ];
 
