@@ -1,120 +1,123 @@
-import React from 'react';
-import { FaStar, FaShoppingCart, FaEnvelope } from 'react-icons/fa';
+import React, { useState } from 'react'
 
-// Featured Products Component
-const FeaturedProducts = () => {
-  const products = [
-    { id: 1, name: 'Wireless Earbuds', price: 99.99, rating: 4.5, image: 'https://garamart.com/wp-content/uploads/2022/04/fabric-wireless-bluetooth-speaker1-300x300.png.webp' },
-    { id: 2, name: 'Over-Ear Headphones', price: 199.99, rating: 4.8, image: 'https://example.com/headphones.jpg' },
-    { id: 3, name: 'Noise-Cancelling Headset', price: 249.99, rating: 4.7, image: 'https://example.com/headset.jpg' },
+const Featured = () => {
+  const tabList = [
+    "Featured",
+    "Ongoing Sales",
+    "Top Rated"
+  ]
+
+  const [activeTab, setActiveTab] = useState(0)
+
+  const handleClickTab = (index) => {
+    setActiveTab(index)
+  }
+
+  // Sample product data (you should replace this with your actual data)
+  const featuredProducts = [
+    { id: 1, name: "Premium headphones", sub :"Electronics", price: 29.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/220916160021352331-300x300.webp" },
+    { id: 2, name: " Suitable Laptop stand", sub :"Accessories", price: 39.99, image: "https://shopnest.africa/wp-content/uploads/2024/04/unnamed-file-46-300x300.jpg" },
+  ];
+
+  const saleProducts = [
+    { id: 1, name: "Sale Item 1", originalPrice: 49.99, salePrice: 39.99, image: "https://placekitten.com/202/202" },
+    { id: 2, name: "Sale Item 2", originalPrice: 59.99, salePrice: 44.99, image: "https://placekitten.com/203/203" },
+  ];
+
+  const topRatedProducts = [
+    { id: 1, name: "Top Rated 1", price: 34.99, rating: 4.5, reviewCount: 120, image: "https://placekitten.com/204/204" },
+    { id: 2, name: "Top Rated 2", price: 54.99, rating: 5, reviewCount: 89, image: "https://placekitten.com/205/205" },
   ];
 
   return (
-    <section className="py-12 bg-gray-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Featured Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img src={product.image} alt={product.name} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                <div className="flex items-center mb-2">
-                  <FaStar className="text-yellow-400 mr-1" />
-                  <span>{product.rating}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-bold">${product.price}</span>
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">
-                    <FaShoppingCart className="inline-block mr-2" />
+    <div className="containr  py-8">
+      <div className="flex mb-4 px-3 border-b">
+        {tabList.map((tab, index ) => (
+          <button
+            key={index}
+            className={`py-2 px-4 font-semibold ${
+              activeTab === index
+                ? "text-yellow-500 border-b-4 border-yellow-500"
+                : "text-gray-500 hover:text-yellow-500"
+            }`}
+            onClick={() => handleClickTab(index)}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      <div className="tantent bg-white s
+       rounded-lg hadow-lg">
+        {activeTab === 0 && (
+          <div className="feature-content">
+            {/* <h2 className="text-2xl font-bold mb-4">Featured Products</h2> */}
+            <div className="grid grid-cols-2 space-x-2 px-3 sm:grid-cols-3 md:grid-cols-4 ">
+              {featuredProducts.map((product) => (
+                <div key={product.id} className="bgellow-100 border  rounded-lg flex p-2 flex-col">
+                  <h3 className="text-[12px]">{product.sub}</h3>
+                  <h3 className="text-[12px] font-semibold mb-1">{product.name}</h3>
+                  <img src={product.image} alt={product.name} className="w-[140px] h-[140px] object-cover mb-2 rounded" />
+                  <p className="text-gray-600 font-medium">${product.price}</p>
+                  <button className="mt-2 bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition duration-300">
                     Add to Cart
                   </button>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Categories Section Component
-const CategoriesSection = () => {
-  const categories = [
-    { id: 1, name: 'Earbuds', image: 'https://example.com/earbuds-category.jpg' },
-    { id: 2, name: 'Headphones', image: 'https://garamart.com/wp-content/uploads/2022/05/3-%E7%99%BD%E5%BA%95-%E9%BB%91-300x300.jpg.webp' },
-    { id: 3, name: 'Speakers', image: 'https://example.com/speakers-category.jpg' },
-    { id: 4, name: 'Accessories', image: 'https://example.com/accessories-category.jpg' },
-  ];
-
-  return (
-    <section className="py-12 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Shop by Category</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {categories.map((category) => (
-            <div key={category.id} className="relative group cursor-pointer">
-              <img src={category.image} alt={category.name} className="w-full h-40 object-cover rounded-lg" />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <span className="text-white text-xl font-semibold">{category.name}</span>
-              </div>
+          </div>
+        )}
+        {activeTab === 1 && (
+          <div className="ongoing-sales-content">
+            <h2 className="text-2xl font-bold mb-4">Ongoing Sales</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {saleProducts.map((product) => (
+                <div key={product.id} className="bg-yellow-100 rounded-lg p-4 flex flex-col">
+                  <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-2 rounded" />
+                  <h3 className="text-lg font-semibold">{product.name}</h3>
+                  <p className="text-gray-600 line-through">${product.originalPrice}</p>
+                  <p className="text-red-600 font-bold">${product.salePrice}</p>
+                  <button className="mt-2 bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        )}
+        {activeTab === 2 && (
+          <div className="top-rated-content">
+            <h2 className="text-2xl font-bold mb-4">Top Rated Products</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {topRatedProducts.map((product) => (
+                <div key={product.id} className="bg-yellow-100 rounded-lg p-4 flex flex-col">
+                  <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-2 rounded" />
+                  <h3 className="text-lg font-semibold">{product.name}</h3>
+                  <p className="text-gray-600">${product.price}</p>
+                  <div className="flex items-center mt-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className={`w-4 h-4 ${i < product.rating ? 'text-yellow-500' : 'text-gray-300'}`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                    <span className="ml-1 text-sm text-gray-600">({product.reviewCount})</span>
+                  </div>
+                  <button className="mt-2 bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
-    </section>
-  );
-};
-
-// Special Offer Banner Component
-const SpecialOfferBanner = () => {
-  return (
-    <section className="bg-gradient-to-r from-purple-600 to-indigo-600 py-12">
-      <div className="container mx-auto px-4 text-center text-white">
-        <h2 className="text-3xl font-bold mb-4">Special Offer!</h2>
-        <p className="text-xl mb-6">Get 20% off on all headphones. Use code: AUDIO20</p>
-        <button className="bg-white text-purple-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition duration-300">
-          Shop Now
-        </button>
-      </div>
-    </section>
-  );
-};
-
-// Newsletter Signup Component
-const NewsletterSignup = () => {
-  return (
-    <section className="bg-gray-100 py-12">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
-        <p className="text-lg mb-6">Stay updated with our latest products and offers!</p>
-        <form className="max-w-md mx-auto flex">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-grow px-4 py-2 rounded-l-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button type="submit" className="bg-blue-500 text-white px-6 py-2 rounded-r-full hover:bg-blue-600 transition duration-300">
-            <FaEnvelope className="inline-block mr-2" />
-            Subscribe
-          </button>
-        </form>
-      </div>
-    </section>
-  );
-};
-
-// Main App Component
-const Ok = () => {
-  return (
-    <div>
-      <FeaturedProducts />
-      {/* <CategoriesSection /> */}
-      <SpecialOfferBanner />
-      <NewsletterSignup />
     </div>
-  );
-};
+  )
+}
 
-export default Ok;
+export default Featured
