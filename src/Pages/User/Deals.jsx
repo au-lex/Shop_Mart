@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaClock, FaShoppingCart } from 'react-icons/fa';
+import { FaHotjar } from 'react-icons/fa';
 
 const Deals = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -36,6 +37,14 @@ const Deals = () => {
       image: "https://garamart.com/wp-content/uploads/2022/05/Picun-W16B-TWS-Headphones-300x300.jpg.webp",
       discount: 33
     },
+    // {
+    //   id: 2,
+    //   name: "Premium Wireless Headphones",
+    //   originalPrice: 299.99,
+    //   dealPrice: 199.99,
+    //   image: "https://shopnest.africa/wp-content/uploads/2024/07/221227150011296073-300x300.webp",
+    //   discount: 33
+    // },
     {
       id: 2,
       name: "Noise-Cancelling Earbuds",
@@ -50,31 +59,42 @@ const Deals = () => {
   return (
     <section className="py-12">
       <div className="c">
-        <section className="desc ">
-
-      
-        <h2 className=" text-center text-yellow-500 font-bold mb-1 ">Today's Hot Deals</h2>
-        <div className="">
-          <div className="flex items-center justify-center mb4">
-            <FaClock className="text-red-500 mr-2" />
-            <span className="text-2xl font-bold text-yellow-500">
-              {`${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}`}
-            </span>
-          </div>
-          {/* <p className="text-center text-gray-600">Hurry! These deals won't last long</p> */}
-        </div>
-        </section>
+       
         <div className="">
           <div className=" px-[1rem]   w-full">
             {deals.map(deal => (
-              <div key={deal.id} className="bg-white mb-[2rem] w-[100%] p-2 border-yellow-500 rounded-lg border shadow-lg overflow-hidden" >
-                <div className="">
-                  <img src={deal.image} alt={deal.name} className="w-full h-64 object-cover" />
+              <div key={deal.id} className="bg-white mb-[2em] w-[100%] p-2
+               border-yellow-500 rounded-lg border shadow-lg overflow-hidden" >
+
+<section className="desc ">
+
+<section className="">
+            <div className=" z-10 bg-red-500 text-white
+              p-2 rounded-bl-lg  rounded-t-lg flex justify-center items-center">
+                <span className="block"></span>
+              <FaHotjar className="mr-2" />
+              <span className="font-bold"> Today's Hot Deal</span>
+              <div className="">
+  <div className="flex items-center justify-end mb4">
+    <FaClock className="text-red-500 mr-2" />
+    <span className="text-xl font-bold text-white">
+      {`${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}`}
+    </span>
+  </div>
+  
+</div>
+            </div>
+           </section>
+{/* <h2 className=" text-right  font-bold mb-1 ">Today's Hot Deals</h2> */}
+
+</section>
+                <div className=" flex justify-center ">
+                  <img src={deal.image} alt={deal.name} className="w-[200px] h-[200px] object-cover" />
                   {/* <div className="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-bl-lg">
                     {deal.discount}% OFF
                   </div> */}
                 </div>
-                <div className="p-6">
+                <div className="p-">
                   <h3 className="text-[15px] font-bold mb-2">{deal.name}</h3>
                   <div className="flex items-center justify-between mb-4">
                     <div>
@@ -83,7 +103,7 @@ const Deals = () => {
                     </div>
                     {/* <span className="bg-green-500 text-white px-2 py-1 rounded-full text-sm">Save ${(deal.originalPrice - deal.dealPrice).toFixed(2)}</span> */}
                   </div>
-                  <button className="w-full bg-yellow-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-full transition duration-300 flex items-center justify-center">
+                  <button className="w-full bg-ye-500 text-yellow-500 border-yellow-500 border hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-full transition duration-300 flex items-center justify-center">
                     <FaShoppingCart className="mr-2" />
                     Add to Cart
                   </button>
