@@ -7,6 +7,8 @@ const RecentlyAdded = () => {
     { id: 2, name: "Fresh Product 2", price: 34.99, image: "https://shopnest.africa/wp-content/uploads/2024/04/61icoXyZ8aL._AC_SL1500_-300x300.jpg", date: "2024-07-26" },
     { id: 3, name: "Just In 3", price: 19.99, image: "https://shopnest.africa/wp-content/uploads/2023/11/1-6-300x300.jpg", date: "2024-07-27" },
     { id: 4, name: "Latest Item 4", price: 44.99, image: "https://shopnest.africa/wp-content/uploads/2024/05/IMG_5337-300x300.jpeg", date: "2024-07-27" },
+    { id: 5, name: "Latest Item 4", price: 44.99, image: "https://shopnest.africa/wp-content/uploads/2023/12/fe0cddf8df6cc294a8ebee979fda6446-300x300.jpeg", date: "2024-07-27" },
+    { id: 6, name: "MTN cart 6 Router", price: 44.99, image: "https://shopnest.africa/wp-content/uploads/2024/06/3654B6EF-0C86-45D2-A278-3E0901E810FF-300x300.jpeg", date: "2024-07-27" },
   ];
 
   return (

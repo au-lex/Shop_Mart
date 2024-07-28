@@ -15,10 +15,12 @@ const Featured = () => {
 
   // Sample product data (you should replace this with your actual data)
   const featuredProducts = [
-    { id: 1, name: "Premium headphones", sub :"Electronics", price: 29.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/220916160021352331-300x300.webp" },
-    { id: 2, name: " Suitable Laptop stand", sub :"Accessories", price: 39.99, image: "https://shopnest.africa/wp-content/uploads/2024/04/unnamed-file-46-300x300.jpg" },
-    { id: 3, name: " Canyon Bluetooth", sub :"Accessories", price: 39.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/230309080910252110-300x300.webp" },
-    { id: 4, name: " Wireless Mouse", sub :"Accessories", price: 30.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/221123150033194311-300x300.webp" },
+    { id: 1, name: "Hp All-in-one Desktop", sub :"Electronics", price: 29.99, image: "https://shopnest.africa/wp-content/uploads/2024/02/all-in-300x300.jpg" },
+    { id: 2, name: "128 4-in-1 flash drive", sub :"Electronics", price: 29.99, image: "https://shopnest.africa/wp-content/uploads/2024/05/Green-Lion-4-in-1-USB-Flash-Drive-128GB-300x300.jpeg" },
+    { id: 3, name: "Premium headphones", sub :"Electronics", price: 29.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/220916160021352331-300x300.webp" },
+    { id: 4, name: " Suitable Laptop stand", sub :"Accessories", price: 39.99, image: "https://shopnest.africa/wp-content/uploads/2024/04/unnamed-file-46-300x300.jpg" },
+    { id: 5, name: " Canyon Bluetooth", sub :"Accessories", price: 39.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/230309080910252110-300x300.webp" },
+    { id: 6, name: " Wireless Mouse", sub :"Accessories", price: 30.99, image: "https://shopnest.africa/wp-content/uploads/2024/07/221123150033194311-300x300.webp" },
   ];
 
   const saleProducts = [
