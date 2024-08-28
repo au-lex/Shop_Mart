@@ -71,6 +71,7 @@ const OngoingSales = () => {
                     <h2 className="text-2xl font-bold text-yellow-700">Ongoing Sales</h2>
                 </div>
                 <p className="text-yellow-600 mt-2">Don't miss out on these amazing deals!</p>
+                <p className="text-yellow-600 mt-2">Don't miss out on these amazing deals!</p>
             </div>
             <div className="ongoing-sales-content">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 px-2 gap-2">

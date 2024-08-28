@@ -1,55 +1,74 @@
-
-
-
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
+  Outlet
 } from "react-router-dom";
 
-
-import LandingPage from "./Pages/LandingPage/LandingPage";
 import Login from "./Pages/Login/Login";
 import UserDashboard from "./Pages/User/UserDashboard";
 import Signup from "./Pages/Signup/Signup";
 import ForgotPassword from "./Pages/Login/ForgotPsw";
 import Cart from "./Pages/Cart/Cart";
+import Orders from "./Pages/Orders/Orders";
+import Saved from "./Pages/Saved/Saved";
+import Setting from "./Pages/Settings/Setting";
+
+import Footer from "./Componet/Footer";
+import UserHeader from "./Pages/User/UserHeader";
 
 
-
-
+const Layout = () => {
+  return (
+    <>
+      <UserHeader />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage/>,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <UserDashboard />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/orders",
+        element: <Orders />,
+      },
+      {
+        path: "/saved",
+        element: <Saved />,
+      },
+      {
+        path: "/settings",
+        element: <Setting />,
+      },
+    ],
   },
   {
     path: "/login",
-    element: <Login/>,
+    element: <Login />,
   },
   {
     path: "/forgotpsw",
-    element: <ForgotPassword/>,
+    element: <ForgotPassword />,
   },
   {
     path: "/signup",
-    element: <Signup/>,
+    element: <Signup />,
   },
-  {
-    path: "/shop",
-    element: <UserDashboard/>,
-  },
-  {
-    path: "/cart",
-    element: <Cart/>,
-  },
-
- 
- 
 ]);
-
 
 export default function App() {
   return (
@@ -58,10 +77,3 @@ export default function App() {
     </React.StrictMode>
   );
 }
-
-
-
-
-
-
-
