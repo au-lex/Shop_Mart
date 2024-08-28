@@ -80,8 +80,8 @@ const UserHeader = () => {
           < RiMenu5Fill onClick={handleOpenSide} className="text-4xl border bor   sadow p-1 rounded text-yellow-600 borderder-2 cursor-pointer" />
           <Link to ="/" className="flex items-center space-x-2">
             <SiShopware className="text-[28px] w-10 text-yellow-500" />
-            <h1 className="text-2xl font-extrabold ">
-              Crypto<span className="text-yellow-500">Cart</span>
+            <h1 className="text-2xl font-extrabold cap ">
+              Techie<span className="text-yellow-500">Cart</span>
             </h1>
           </Link>
           <img 
