@@ -11,7 +11,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="banner-section pt-[12rem] py-[4rem] bg-gradient-to-r from-yellow-500 to-yellow-600 relative">
+    <section className="banner-section pt-[12rem] py-[4rem] bg-gradient-to-r from-orange-500 to-yellow-600 relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">

@@ -40,7 +40,7 @@ const UserHeader = () => {
   const savedCount = 10; // Add count for saved items
 
   const navItems = [
-    { name: "Home", path: "/shop", icon: RiHomeSmileLine },
+    { name: "Home", path: "/", icon: RiHomeSmileLine },
     { name: "Cart", path: "/cart", icon: RiShoppingCartLine, count: cartCount },
     { name: "Orders", path: "/orders", icon: RiOrderPlayLine, count: ordersCount },
     { name: "Saved", path: "/saved", icon: RiHeartLine, count: savedCount },
