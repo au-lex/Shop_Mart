@@ -1,82 +1,107 @@
-
-
-
-
 import React from 'react';
-import { MdRemove, MdAdd, MdShoppingCart, MdArrowBack } from 'react-icons/md';
+import { MdRemove, MdAdd, MdShoppingCart, MdArrowBack, MdDelete, MdLocalOffer } from 'react-icons/md';
 
-const CartItem = ({ name, category, price, quantity }) => (
-  <div className="flex items-center justify-between py-4 border-b">
-    <div className="flex items-center">
-      <div className="w-12 h-12 bg-gray-200 borde rounded-md mr-4">
-        
-      </div>
-      <div>
-        <h3 className="font-medium text-[12px]">{name}</h3>
-        <p className="text-sm text-gray-500">{category}</p>
-      </div>
-    </div>
-    <div className="flex items-center">
-      <span className="mr-4">${price.toFixed(2)}</span>
-      <div className="flex items-center border border-orange-700 rounded-md">
-        <button className="p-1"><MdRemove size={16} /></button>
-        <span className="px-2">{quantity}</span>
-        <button className="p-1"><MdAdd size={16} /></button>
-      </div>
-    </div>
-  </div>
-);
+
 
 const Cart = () => {
   const cartItems = [
-    { name: 'Woman Sweater', category: 'Woman Fashion', price: 70.00, quantity: 1 },
-    { name: 'Smart Watch', category: 'Electronics', price: 55.00, quantity: 1 },
-    { name: 'W Headphone', category: 'Electronics', price: 120.00, quantity: 1 },
+    { id: 1, name: 'Wireless Earbuds', category: 'Electronics', price: 79.99, quantity: 1, image: "https://transvelo.github.io/electro-html/2.0/assets/img/380X350/img1.jpg" },
+    { id: 2, name: 'Laptop Backpack', category: 'Accessories', price: 49.99, quantity: 1, image: "https://transvelo.github.io/electro-html/2.0/assets/img/212X200/img2.jpg" },
+    { id: 3, name: 'Smart Watch', category: 'Electronics', price: 199.99, quantity: 1, image: "https://shopnest.africa/wp-content/uploads/2024/07/230309080910252110-300x300.webp" },
   ];
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const discount = subtotal * 0.1;
+  const total = subtotal - discount;
+
+  const CartItem = ({ name, category, price, quantity, image }) => (
+    <div className="flex items-center justify-between py-4 border-b relative">
+      <div className="flex items-center">
+        <div className="w-16 p-1 border-2 border-yellow-300 rounded-md mr-4 overflow-hidden">
+          <img src={image} alt={name} className="w-full h-full object-cover" />
+        </div>
+        <div className='w-[89o%]'>
+          <h3 className="font-medium text-[12px]">{name}</h3>
+          <p className="text-xs text-gray-500">{category}</p>
+          <span className="mr-4 font-semibold">${price.toFixed(2)}</span>
+    
+        </div>
+      </div>
+      <div className=" space-y-2 ">
+      <div className="flex items-center border border-yellow-300 rounded-md  p-1 mt-2">
+            <button className="p-1 "><MdRemove size={16} /></button>
+            <span className="px-2">{quantity}</span>
+            <button className="p-1 ]"><MdAdd size={16} /></button>
+          </div>
+        <button className=" text-yellow-400  hover:text-red-700">
+          <MdDelete size={25} className='' />
+        </button>
+      </div>
+    </div>
+  );
+  
 
   return (
-    <section className="max-w-md mx-auto pt-[10rem] bg-white p-2 rounded-3xl shadow-lg">
+    <section className="max-w-2xl mx-auto pt-[11rem] bg-white p-6 rounded-lg shadow-lg">
       <div className="flex items-center justify-between mb-6">
-        <button className="text-gray-600">
-          <MdArrowBack size={24} />
+        <button className="text-gray-600 shadow p-1">
+          <MdArrowBack size={20} />
         </button>
-        <h2 className="text-xl font-semibold">My Cart</h2>
+        <h2 className="text-2xl font-semibold">Shopping Cart</h2>
         <div className="w-6"></div>
       </div>
 
-      <div className="space-y-4">
-        {cartItems.map((item, index) => (
-          <CartItem key={index} {...item} />
-        ))}
-      </div>
+      {cartItems.length === 0 ? (
+        <div className="text-center py-8">
+          <MdShoppingCart size={48} className="mx-auto text-gray-400 mb-4" />
+          <p className="text-gray-600">Your cart is empty</p>
+          <p className="text-sm text-gray-500 mt-2">Add some items to your cart and they will appear here.</p>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {cartItems.map((item) => (
+            <CartItem 
+              key={item.id} 
+              {...item} 
+            />
+          ))}
+        </div>
+      )}
 
-      <div className="mt-6">
+      <div className="mt-8">
         <div className="flex items-center border rounded-md p-2">
+          <MdLocalOffer className="text-gray-400 mr-2" size={20} />
           <input
             type="text"
-            placeholder="Enter Discount Code"
+            placeholder="Enter discount code"
             className="flex-grow outline-none text-sm"
           />
-          <button className="text-orange-500 font-medium text-sm">Apply</button>
+          <button 
+            className="bg-yellow-500 text-white px-4 py-1 rounded-md text-sm font-medium"
+          >
+            Apply
+          </button>
         </div>
       </div>
 
-      <div className="mt-6 space-y-2">
-        <div className="flex justify-between">
-          <span className="text-gray-600">Subtotal</span>
+      <div className="mt-8 space-y-2">
+        <div className="flex justify-between text-sm text-gray-600">
+          <span>Subtotal</span>
           <span>${subtotal.toFixed(2)}</span>
         </div>
-        <div className="flex justify-between font-semibold">
+        <div className="flex justify-between text-sm text-green-600">
+          <span>Discount (10%)</span>
+          <span>-${discount.toFixed(2)}</span>
+        </div>
+        <div className="flex justify-between font-semibold text-lg pt-2 border-t">
           <span>Total</span>
-          <span>${subtotal.toFixed(2)}</span>
+          <span>${total.toFixed(2)}</span>
         </div>
       </div>
 
-      <button className="w-full bg-orange-500 text-white py-3 rounded-full mt-6 flex items-center justify-center">
+      <button className="w-full bg-yellow-600 hover:bg-yellow-700 text-white py-3 rounded-md mt-8 flex items-center justify-center font-semibold">
         <MdShoppingCart className="mr-2" size={20} />
-        Checkout
+        Proceed to Checkout
       </button>
     </section>
   );
