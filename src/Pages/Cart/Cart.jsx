@@ -1,8 +1,6 @@
 import React from 'react';
 import { MdRemove, MdAdd, MdShoppingCart, MdArrowBack, MdDelete, MdLocalOffer } from 'react-icons/md';
 
-
-
 const Cart = () => {
   const cartItems = [
     { id: 1, name: 'Wireless Earbuds', category: 'Electronics', price: 79.99, quantity: 1, image: "https://transvelo.github.io/electro-html/2.0/assets/img/380X350/img1.jpg" },
@@ -15,39 +13,37 @@ const Cart = () => {
   const total = subtotal - discount;
 
   const CartItem = ({ name, category, price, quantity, image }) => (
-    <div className="flex items-center justify-between py-4 border-b relative">
+    <div className="flex items-center justify-between py-4 border-b border-yellow-300 relative">
       <div className="flex items-center">
-        <div className="w-16 p-1 border-2 border-yellow-300 rounded-md mr-4 overflow-hidden">
+        <div className="w-[80px] p-1 border-2 border-yellow-300 rounded-md mr-4 overflow-hidden">
           <img src={image} alt={name} className="w-full h-full object-cover" />
         </div>
-        <div className='w-[89o%]'>
-          <h3 className="font-medium text-[12px]">{name}</h3>
+        <div className='w-[80%]'>
+          <h3 className="font-medium text-sm text-gray-800">{name}</h3>
           <p className="text-xs text-gray-500">{category}</p>
-          <span className="mr-4 font-semibold">${price.toFixed(2)}</span>
-    
+          <span className="mr-4 font-semibold text-gray-900">${price.toFixed(2)}</span>
         </div>
       </div>
-      <div className=" space-y-2 ">
-      <div className="flex items-center border border-yellow-300 rounded-md  p-1 mt-2">
-            <button className="p-1 "><MdRemove size={16} /></button>
-            <span className="px-2">{quantity}</span>
-            <button className="p-1 ]"><MdAdd size={16} /></button>
-          </div>
-        <button className=" text-yellow-400  hover:text-red-700">
-          <MdDelete size={25} className='' />
+      <div className="space-y-2">
+        <div className="flex items-center border border-yellow-300 rounded-md p-1 mt-2">
+          <button className="p-1 text-yellow-600 hover:text-yellow-800"><MdRemove size={16} /></button>
+          <span className="px-2 text-gray-800">{quantity}</span>
+          <button className="p-1 text-yellow-600 hover:text-yellow-800"><MdAdd size={16} /></button>
+        </div>
+        <button className="text-yellow-600 hover:text-red-700">
+          <MdDelete size={25} />
         </button>
       </div>
     </div>
   );
-  
 
   return (
-    <section className="max-w-2xl mx-auto pt-[11rem] bg-white p-6 rounded-lg shadow-lg">
+    <section className="max-w-2xl mx-auto pt-[10rem] bg-white p-4 rounded-lg shadow-lg">
       <div className="flex items-center justify-between mb-6">
-        <button className="text-gray-600 shadow p-1">
+        <button className="text-gray-600 hover:text-yellow-600 p-1">
           <MdArrowBack size={20} />
         </button>
-        <h2 className="text-2xl font-semibold">Shopping Cart</h2>
+        <h2 className="text-2xl font-semibold text-gray-800">Shopping Cart</h2>
         <div className="w-6"></div>
       </div>
 
@@ -60,24 +56,21 @@ const Cart = () => {
       ) : (
         <div className="space-y-4">
           {cartItems.map((item) => (
-            <CartItem 
-              key={item.id} 
-              {...item} 
-            />
+            <CartItem key={item.id} {...item} />
           ))}
         </div>
       )}
 
       <div className="mt-8">
-        <div className="flex items-center border rounded-md p-2">
+        <div className="flex items-center border rounded-md p-2 border-yellow-300">
           <MdLocalOffer className="text-gray-400 mr-2" size={20} />
           <input
             type="text"
             placeholder="Enter discount code"
-            className="flex-grow outline-none text-sm"
+            className="flex-grow outline-none text-sm text-gray-800"
           />
           <button 
-            className="bg-yellow-500 text-white px-4 py-1 rounded-md text-sm font-medium"
+            className="bg-yellow-500 text-white px-4 py-1 rounded-md text-sm font-medium hover:bg-yellow-600"
           >
             Apply
           </button>
@@ -89,11 +82,11 @@ const Cart = () => {
           <span>Subtotal</span>
           <span>${subtotal.toFixed(2)}</span>
         </div>
-        <div className="flex justify-between text-sm text-green-600">
+        <div className="flex justify-between text-sm text-yellow-600">
           <span>Discount (10%)</span>
           <span>-${discount.toFixed(2)}</span>
         </div>
-        <div className="flex justify-between font-semibold text-lg pt-2 border-t">
+        <div className="flex justify-between font-semibold text-lg pt-2 border-t border-gray-200">
           <span>Total</span>
           <span>${total.toFixed(2)}</span>
         </div>
