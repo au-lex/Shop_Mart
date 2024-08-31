@@ -16,7 +16,7 @@ const UserDashboard = () => {
 
 <Deals />
 <RecentlyAdded/>
-<Footer />
+{/* <Footer /> */}
 
     </>
   )
