@@ -65,7 +65,7 @@ const savedProductsData = [
 const SavedProductCard = ({ product, onRemove, onAddToCart, isExpanded, onToggle }) => {
   return (
     <div className="border rounded-lg shadow-sm mb-8 relative bg-yelklow-50 overflkow-hidden">
-      <span className="del flex w-[2.5rem] absolute top-[-1rem] h-[2.5rem] items-center justify-center bg-white rounded-full">
+      <span className="del border shadow flex w-[2.5rem] absolute top-[-1rem] h-[2.5rem] items-center justify-center bg-white rounded-full">
         <button onClick={() => onRemove(product.id)} className="p-2 text-red-600 hover:bg-red-100 rounded">
           <FaTrashAlt size={16} />
         </button>

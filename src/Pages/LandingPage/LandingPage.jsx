@@ -20,7 +20,7 @@ const LandingPage = () => {
     <TrustBadges />
     <FaqComponent/>
     {/* <Footer /> */}
-    <Footer />
+    {/* <Footer /> */}
     
     </div>
     </>
