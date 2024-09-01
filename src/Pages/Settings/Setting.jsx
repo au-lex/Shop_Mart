@@ -4,6 +4,7 @@ import Personal from './Personal';
 import Privacy from './Privacy';
 import Payment from './Payment';
 import Notification from './Notification';
+import Loader from '../../Componet/Loader';
 
 const Setting = () => {
 
@@ -22,7 +23,12 @@ const Setting = () => {
 
 
   return (
-    <div className="container mx-auto pt-[10rem] max-w-2xl">
+    <>
+
+    <Loader/>
+
+    <div className="container mx-auto pt-[12rem] max-w-2xl">
+
       <h1 className="text-[22px] font-semibold text-gray-800 text-center">Account Settings</h1>
       <Personal/>
       <Privacy />
@@ -45,6 +51,7 @@ const Setting = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 

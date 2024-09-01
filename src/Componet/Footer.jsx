@@ -1,10 +1,4 @@
-// import React from 'react';
-// import { SiShopware } from "react-icons/si";
-
-// export default Footer = () => {
-//   return (
-//   );
-// };
+import { Link } from 'react-router-dom';
 
 import React from 'react'
 import { SiShopware } from "react-icons/si";
@@ -16,13 +10,10 @@ const Footer = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Company Info */}
         <div>
-        <span className="flex">
-        <SiShopware className="text-[28px] w-10 text-yellow-500 " />
-    <h1 className="text-2xl font-extrabold text-blue==-500">
-      E<span className="text-yellow-500">_</span>Shoppy
-    </h1>
-      </span>
-          <p className="text-[12px]">Your digital marketplace for endless possibilities.</p>
+        <Link to ="/" className="block bor">
+       <img src="https://res.cloudinary.com/dmhvsyzch/image/upload/v1725191559/image_prev_ui_vypamu.png" alt="logo" className="w-[180px] h-[75px] object-cover cursor-pointer" />
+          </Link>
+          <p className="text-[12px] text-yellow-500 tracking-[4px]">Discover, Click, Tech Up"</p>
         </div>
 
         {/* Quick Links */}

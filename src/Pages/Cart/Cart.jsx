@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdRemove, MdAdd, MdShoppingCart, MdArrowBack, MdDelete, MdLocalOffer } from 'react-icons/md';
+import Loader from '../../Componet/Loader';
 
 const Cart = () => {
   const cartItems = [
@@ -38,7 +39,11 @@ const Cart = () => {
   );
 
   return (
-    <section className="max-w-2xl mx-auto pt-[10rem] bg-white p-4 rounded-lg shadow-lg">
+
+    <>
+    <Loader/>
+
+    <section className="max-w-2xl mx-auto pt-[12rem] bg-white p-4 rounded-lg shadow-lg">
       <div className="flex items-center justify-between mb-6">
         <button className="text-gray-600 hover:text-yellow-600 p-1">
           <MdArrowBack size={20} />
@@ -97,6 +102,7 @@ const Cart = () => {
         Proceed to Checkout
       </button>
     </section>
+    </>
   );
 };
 

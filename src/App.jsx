@@ -17,11 +17,13 @@ import Setting from "./Pages/Settings/Setting";
 
 import Footer from "./Componet/Footer";
 import UserHeader from "./Pages/User/UserHeader";
+import Loader from "./Componet/Loader";
 
 
 const Layout = () => {
   return (
     <>
+    {/* <Loader /> */}
       <UserHeader />
       <Outlet />
       <Footer />

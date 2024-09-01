@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { FaHeart, FaShoppingCart, FaTrashAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
+import Loader from '../../Componet/Loader';
+
+
 const savedProductsData = [
   {
     id: 1,
@@ -118,7 +121,11 @@ const Saved = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 pt-[10rem]">
+
+    <>
+    <Loader />
+
+    <div className="container mx-auto px-4 py-8 pt-[12rem]">
       <h1 className="text-xl font-semibold mb-6 flex items-center">
         Saved Products
         <button className="p-2 text-red-500 ml-2">
@@ -140,6 +147,8 @@ const Saved = () => {
         ))
       )}
     </div>
+
+    </>
   );
 };
 

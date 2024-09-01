@@ -67,7 +67,7 @@ const UserHeader = () => {
 
   return (
     <>
-      {/* Normal header */}
+      
 
       {openSide && (
  <div 
@@ -75,14 +75,12 @@ const UserHeader = () => {
  onClick={handleOpenSide}
 ></div>
       )}
-      <section className=" fixed w-full h-[9rem] bg-white z-50  border-b flex flex-col items-center p-4">
+      <section className=" fixed w-full min-h-[9rem] bg-white z-40 
+       border-b border-yellow-600 flex flex-col items-center p-4">
         <div className="flex items-center justify-between w-full max-w-4xl">
           < RiMenu5Fill onClick={handleOpenSide} className="text-4xl border bor   sadow p-1 rounded text-yellow-600 borderder-2 cursor-pointer" />
-          <Link to ="/" className="flex items-center space-x-2">
-            <SiShopware className="text-[28px] w-10 text-yellow-500" />
-            <h1 className="text-2xl font-extrabold cap ">
-              Techie<span className="text-yellow-500">Cart</span>
-            </h1>
+          <Link to ="/" className="block bor">
+       <img src="https://res.cloudinary.com/dmhvsyzch/image/upload/v1725191559/image_prev_ui_vypamu.png" alt="logo" className="w-[180px] h-[75px] object-cover cursor-pointer" />
           </Link>
           <span className="block border rounded-full border-yellow-600 shadow">
 
