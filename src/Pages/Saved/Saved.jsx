@@ -65,7 +65,7 @@ const savedProductsData = [
 const SavedProductCard = ({ product, onRemove, onAddToCart, isExpanded, onToggle }) => {
   return (
     <div className="border rounded-lg shadow-sm mb-8 relative bg-yelklow-50 overflkow-hidden">
-      <span className="del border shadow flex w-[2.5rem] absolute top-[-1rem] h-[2.5rem] items-center justify-center bg-white rounded-full">
+      <span className="del border border-yellow-500 shadow flex w-[2.5rem] absolute top-[-1rem] h-[2.5rem] items-center justify-center bg-white rounded-full">
         <button onClick={() => onRemove(product.id)} className="p-2 text-red-600 hover:bg-red-100 rounded">
           <FaTrashAlt size={16} />
         </button>
@@ -74,7 +74,8 @@ const SavedProductCard = ({ product, onRemove, onAddToCart, isExpanded, onToggle
         <div className="flex items-center space-x-4">
           <img src={product.image} alt={product.name} className="w-16 h-16 object-cover rounded" />
           <div>
-            <h3 className="font-semibold text-[12px] text-yellow-800">{product.name}</h3>
+            <h3 className="font-semibold text-[12px] text-yello
+            w-800">{product.name}</h3>
             <p className="text-yellow-600">${product.price.toFixed(2)}</p>
           </div>
         </div>
@@ -82,13 +83,13 @@ const SavedProductCard = ({ product, onRemove, onAddToCart, isExpanded, onToggle
           <button onClick={() => onAddToCart(product)} className="p-2 text-yellow-600 hover:bg-yellow-100 rounded">
             <FaShoppingCart size={20} />
           </button>
-          <button onClick={() => onToggle(product.id)} className="p-2 text-yellow-600 hover:bg-yellow-100 rounded">
-            {isExpanded ? <FaChevronUp size={20} /> : <FaChevronDown size={20} />}
+          <button onClick={() => onToggle(product.id)} className="p-2 text-slate-600 hover:bg-yellow-100 rounded">
+            {isExpanded ? <FaChevronUp size={16} /> : <FaChevronDown size={16} />}
           </button>
         </div>
       </div>
       {isExpanded && (
-        <div className="px-4 pb-4 text-yellow-700">
+        <div className="px-4 pb-4 text-ellow-700">
           <p>{product.description}</p>
         </div>
       )}
