@@ -30,7 +30,7 @@ const Cart = () => {
           <span className="px-2 text-gray-800">{quantity}</span>
           <button className="p-1 text-yellow-600 hover:text-yellow-800"><MdAdd size={16} /></button>
         </div>
-        <button className="text-yellow-600 hover:text-red-700">
+        <button className="text-red-500 hover:text-red-700">
           <MdDelete size={25} />
         </button>
       </div>

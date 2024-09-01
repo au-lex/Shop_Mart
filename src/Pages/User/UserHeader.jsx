@@ -84,11 +84,14 @@ const UserHeader = () => {
               Techie<span className="text-yellow-500">Cart</span>
             </h1>
           </Link>
+          <span className="block border rounded-full border-yellow-600 shadow">
+
           <img 
-            src="https://img.freepik.com/premium-photo/pixar-style-3d-cartoon-character-with-blue-glasses-cap_899449-44846.jpg"
+            src="https://png.pngtree.com/png-clipart/20230620/original/pngtree-3d-avatar-man-like-teacher-artist-png-image_9192787.png"
             alt="user" 
             className="w-12 h-12 object-cover rounded-full" 
-          />
+            />
+            </span>
         </div>
         <div className="mt-4 w-full max-w-4xl">
           <div className="relative ">
