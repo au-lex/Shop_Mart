@@ -27,7 +27,7 @@ const Loader = () => {
   }, []);
 
   return (
-    <div className={`flex items-center justify-center fixed inset-0 bg-gray-800 z-50 ${isLoading ? 'block' : 'hidden'}`}>
+    <div className={`flex items-center justify-center fixed inset-0 bg-slate-900 z-50 ${isLoading ? 'block' : 'hidden'}`}>
       {/* <div className="flex">
         {letters.map((letter, index) => (
           <svg
@@ -57,13 +57,14 @@ const Loader = () => {
         ))}
       </div> */}
 
-<div class="follow-the-leader-line">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+
+<span>
+<div className="block bor">
+       <img src="https://res.cloudinary.com/dmhvsyzch/image/upload/v1725191559/image_prev_ui_vypamu.png" alt="logo" className="w-[180px] h-[75px] object-cover cursor-pointer animate-bounce" />
+          </div>
+
+          <h1 className='text-yellow-500 mt-5 text-center'>loadding.....</h1>
+</span>
     </div>
   );
 };
