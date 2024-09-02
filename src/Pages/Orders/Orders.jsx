@@ -1,107 +1,86 @@
-import React, { useState } from 'react';
-import {   FaBell, FaUser, FaHome, FaChevronLeft } from 'react-icons/fa'; // Importing icons from react-icons
-import { FaCalendar } from 'react-icons/fa6';
+import React from 'react'
 
-const OrderCard = ({ service, assigned, scheduled }) => (
-  <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
-    <h3 className="font-semibold text-lg">{service}</h3>
-    <div className="text-sm text-gray-500">
-      <p>Assigned: {assigned}</p>
-      <p>Scheduled: {scheduled}</p>
-    </div>
-  </div>
-);
+import { orders } from './OrderList'
+import { FaTruckFast } from 'react-icons/fa6'
+import { MdLocationPin } from 'react-icons/md'
+import OrderFilters from './OrderFilters'
 
-const OrderSummary = ({ order }) => (
-  <div className="space-y-4">
-    <div className="flex items-center space-x-2">
-      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-      <p>Order Placed on {order.placedDate}</p>
-    </div>
-    <div className="flex items-center space-x-2">
-      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-      <p>Order Accepted on {order.acceptedDate}</p>
-    </div>
-    <div className="flex items-center space-x-2">
-      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-      <p>Processing Order and Assigning Vendor</p>
-    </div>
-    <div className="flex items-center space-x-2">
-      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-      <p>Completed</p>
-    </div>
-    <div className="mt-6">
-      <h3 className="font-semibold text-lg">{order.service}</h3>
-      <p className="text-sm text-gray-500">Assigned: {order.assigned}</p>
-      <p className="text-sm font-semibold">{order.price}</p>
-    </div>
-  </div>
-);
-
-const OrdersPage = () => {
-  const [activeTab, setActiveTab] = useState('Completed');
-  const [showSummary, setShowSummary] = useState(true);
-
-  const orders = [
-    { service: 'Carpenters', assigned: 'Bindu Partner', scheduled: '26 July 11 AM to 12:30 PM' },
-    { service: 'Car Wash', assigned: 'Bindu Partner', scheduled: '26 July 11 AM to 12:30 PM' },
-    { service: 'Kitchen Cleaning', assigned: 'Bindu Partner', scheduled: '26 July 11 AM to 12:30 PM' },
-    { service: 'Carpenters', assigned: 'Bindu Partner', scheduled: '26 July 11 AM to 12:30 PM' },
-  ];
-
-  const sampleOrder = {
-    service: 'Kitchen Cleaning',
-    assigned: 'Bindu Partner',
-    price: '100/-',
-    placedDate: '26 July',
-    acceptedDate: '26 July',
-  };
-
+const Orders = () => {
   return (
-    <div className="font-sans bg-gray-100 h-screen pt-[10rem]">
-      {!showSummary ? (
-        <div className="p-6">
-          <h1 className="text-2xl font-bold mb-4">My Orders</h1>
-          <div className="flex space-x-4 mb-6">
-            {['Completed', 'Cancelled', 'Requested'].map((tab) => (
-              <button
-                key={tab}
-                className={`px-4 py-2 rounded-full ${
-                  activeTab === tab ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'
-                }`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-          <div className="space-y-4">
-            {orders.map((order, index) => (
-              <OrderCard key={index} {...order} />
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div className="p-6">
-          <button onClick={() => setShowSummary(false)} className="flex items-center text-blue-500 mb-4">
-           
-            <FaChevronLeft />
-            <span>Back</span>
-          </button>
-          <h2 className="text-xl font-semibold mb-6">Order Summary</h2>
-          <OrderSummary order={sampleOrder} />
-        </div>
-      )}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-4">
-     <FaHome />
-      
-        <FaCalendar />
-   
-        <FaBell />
-        <FaUser />
-      </div>
-    </div>
-  );
-};
+    <>
 
-export default OrdersPage;
+      <div className=" pt-[10rem]">
+        <h1 className="text-xl pt-2 font-semibold text-gray-800 mb-4 px-3">My Orders</h1>
+
+{/* orders tab */}
+<OrderFilters />
+
+        <div className="space-y-4">
+          {orders.map((order) => (
+            <div
+              key={order.orderId}
+              className="p-4 border rounded-lg shadow-sm bg-white "
+
+
+            >
+
+
+<section className="orderhe ">
+
+
+              <span className="flex justify-between mb-2">
+
+
+                <p className="text-gray-600 text-[12px]">Order ID <span className="o text-[15px] font-bold text-yellow-600">#{order.orderId}</span> </p>
+
+
+
+                <p className="text-gray-600 border border-yellow-600 p-1 text-[12px] px-4  rounded-2xl">Arrival Date: {order.dateOfArrival}</p>
+              </span>
+              <span className="flex justify-between bo mb-4">
+                <p className="text-gray-600 text-[12px] flex border border-yellow-600  items-center p-1 px-2 rounded-2xl"> <span className='mr-1'><FaTruckFast className='text-[16px] text-yellow-600' /></span> {order.location}</p>
+                <p className="text-gray-600 flex text-[15px] pt-1"><span className="b mr-1"><MdLocationPin  
+                className='text-[21px] text-yellow-600'
+                /></span> {order.location}</p>
+              </span>
+              </section>
+
+              <section className=" flex space-x-4 pt-3">
+
+        
+
+              <figure className="img w-[60%]">
+
+
+              <img
+                src={order.orderImage}
+                alt={order.description}
+                className="w-full h-[10rem] object-cover rounded-lg mb-4 md:mb-0 md:mr-4"
+                />
+                </figure>
+              <figcaption className="desc">
+
+         
+              <div className="">
+                <h2 className="">{order.description}</h2>
+                <p className="text-gray-600">Price: ${order.price.toFixed(2)}</p>
+                <p className="text-gray-600">Status: {order.orderStatus}</p>
+                <p className="text-gray-600">
+                  Payment: {order.paymentInfo.method} (****{order.paymentInfo.cardLast4Digits})
+                </p>
+                {/* <p className="text-gray-600">Tracking Number: {order.trackingNumber}</p> */}
+              </div>
+              </figcaption>
+              </section>
+           
+            </div>
+          ))}
+        </div>
+      </div>
+
+
+    </>
+  )
+}
+
+export default Orders
