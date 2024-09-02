@@ -1,39 +1,80 @@
-// src/components/OrderList.js
 
-import React from 'react';
 
-const orders = [
-  { id: 1, date: '2024-08-28', status: 'Shipped', total: '$120.00' },
-  { id: 2, date: '2024-08-27', status: 'Pending', total: '$80.00' },
-  // Add more orders as needed
+export const orders = [
+  {
+    orderId: '190322345',
+    location: 'New York, USA',
+    dateOfArrival: '9 jun, 2024',
+    orderImage: 'https://shopnest.africa/wp-content/uploads/2024/05/Green-Lion-4-in-1-USB-Flash-Drive-128GB-300x300.jpeg',
+    description: 'Smartphone with 128GB storage',
+    price: 599.99,
+    paymentInfo: {
+      method: 'Credit Card',
+      cardLast4Digits: '1234',
+      status: 'Paid',
+    },
+    address: {
+      name: 'John Doe',
+      street: '123 Main St',
+      city: 'New York',
+      state: 'NY',
+      postalCode: '10001',
+      country: 'USA',
+    },
+    trackingNumber: 'TRK123456789',
+    orderStatus: 'Shipped',
+    deliveryEstimate: '2024-09-20',
+    quantity: 1,
+  },
+  {
+    orderId: '12346',
+    location: 'Los Angeles, USA',
+    dateOfArrival: '2024-09-18',
+    orderImage: 'https://shopnest.africa/wp-content/uploads/2024/02/all-in-300x300.jpg',
+    description: 'Laptop with 16GB RAM',
+    price: 1299.99,
+    paymentInfo: {
+      method: 'PayPal',
+      transactionId: 'PAYPAL123456',
+      status: 'Paid',
+    },
+    address: {
+      name: 'Jane Smith',
+      street: '456 Elm St',
+      city: 'Los Angeles',
+      state: 'CA',
+      postalCode: '90001',
+      country: 'USA',
+    },
+    trackingNumber: 'TRK987654321',
+    orderStatus: 'Processing',
+    deliveryEstimate: '2024-09-22',
+    quantity: 1,
+  },
+  {
+    orderId: '12347',
+    location: 'Chicago, USA',
+    dateOfArrival: '2024-09-19',
+    orderImage: 'https://shopnest.africa/wp-content/uploads/2024/07/220916160021352331-300x300.webp',
+    description: 'Wireless Headphones',
+    price: 199.99,
+    paymentInfo: {
+      method: 'Credit Card',
+      cardLast4Digits: '5678',
+      status: 'Paid',
+    },
+    address: {
+      name: 'Alice Johnson',
+      street: '789 Oak St',
+      city: 'Chicago',
+      state: 'IL',
+      postalCode: '60601',
+      country: 'USA',
+    },
+    trackingNumber: 'TRK456789123',
+    orderStatus: 'Shipped',
+    deliveryEstimate: '2024-09-24',
+    quantity: 2,
+  },
+ 
 ];
-
-const OrderList = () => {
-  return (
-    <div className="flex-1 bg-white p-6 rounded-lg shadow-lg">
-      <h2 className="text-xl font-semibold mb-4">Orders</h2>
-      <table className="w-full border-collapse">
-        <thead>
-          <tr className="bg-gray-200 border-b">
-            <th className="py-2 px-4 text-left">Order ID</th>
-            <th className="py-2 px-4 text-left">Date</th>
-            <th className="py-2 px-4 text-left">Status</th>
-            <th className="py-2 px-4 text-left">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map(order => (
-            <tr key={order.id} className="border-b hover:bg-gray-50">
-              <td className="py-2 px-4">{order.id}</td>
-              <td className="py-2 px-4">{order.date}</td>
-              <td className="py-2 px-4">{order.status}</td>
-              <td className="py-2 px-4">{order.total}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-};
-
-export default OrderList;
