@@ -80,7 +80,7 @@ const UserHeader = () => {
         <div className="flex items-center justify-between w-full max-w-4xl">
           < RiMenu5Fill onClick={handleOpenSide} className="text-4xl border bor   sadow p-1 rounded text-yellow-600 borderder-2 cursor-pointer" />
           <Link to ="/" className="block bor">
-       <img src="https://res.cloudinary.com/dmhvsyzch/image/upload/v1725191559/image_prev_ui_vypamu.png" alt="logo" className="w-[180px] h-[75px] object-cover cursor-pointer" />
+       <img src="https://res.cloudinary.com/dmhvsyzch/image/upload/v1725191559/image_prev_ui_vypamu.png" alt="logo" className="w-[180px] h-[58px] object-cover cursor-pointer" />
           </Link>
           <span className="block border rounded-full border-yellow-600 shadow">
 

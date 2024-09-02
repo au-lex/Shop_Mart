@@ -29,7 +29,7 @@ const Setting = () => {
 
     <div className="container mx-auto pt-[12rem] max-w-2xl">
 
-      <h1 className="text-[22px] font-semibold text-gray-800 text-center">Account Settings</h1>
+      <h1 className="text-[22px] px-6 font-semibold text-gray-800 textcenter">Account Settings</h1>
       <Personal/>
       <Privacy />
       <Notification />
