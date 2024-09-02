@@ -60,13 +60,13 @@ const Loader = () => {
 
 <span>
 <div className="block bor">
-       <img src="https://res.cloudinary.com/dmhvsyzch/image/upload/v1725191559/image_prev_ui_vypamu.png" alt="logo" className="w-[180px] h-[75px] object-cover cursor-pointer animate-bounce" />
+       <img src="https://res.cloudinary.com/dmhvsyzch/image/upload/v1725191559/image_prev_ui_vypamu.png" alt="logo" className="w-[180px] h-[75px] object-cover cursor-pointer   animate-pulse" />
           </div>
 
-          <h1 className='text-yellow-500 mt-5 text-center'>loadding.....</h1>
+          {/* <h1 className='text-yellow-500 mt-5 text-center'>loadding.....</h1> */}
 </span>
     </div>
   );
 };
 
-export default Loader;
+export default Loader;   
