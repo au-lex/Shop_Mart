@@ -5,7 +5,7 @@ import { IoMdAlert } from 'react-icons/io';
 import { FaTruck } from 'react-icons/fa';
 
 
-const OrderFilters = () => {
+const OrderFilters = ({setActiveOrderStatus}) => {
   const orderFilters = [
     { name: "Processing", icon: IoMdCube  },
     { name: "Shipped", icon: FaTruck },
@@ -14,29 +14,36 @@ const OrderFilters = () => {
   ];
   const [activeOrder, setActiveOrder] = useState(0);
 
-  const handleOrder = (tab) => {
-    setActiveOrder(tab);
+  const handleOrder = (idx) => {
+
+    setActiveOrder(idx);
+    setActiveOrderStatus(orderFilters[idx].name)
   };
 
   return (
-    <div className="  bg-white rounded-lg shadow-lg overflow-hidde">
+    <div className="   ">
  
-      <div className="flex justify-around p-4 bg-yellow-50">
+      <div className="flex justify-between  p-4 ">
         {orderFilters.map((filter, idx) => (
           <button
             key={idx}
             onClick={() => handleOrder(idx)}
-            className={`flex flex-col items-center px-6 py-3 rounded-lg transition-all duration-300 ${
+            className={`flex flex-col items-center px-3 py-1 rounded-lg transition-all duration-300 ${
               activeOrder === idx
                 ? "bg-yellow-400 text-white shadow-lg transform -translate-y-1"
                 : "bg-white text-gray-700 hover:bg-yellow-100"
             }`}
           >
             <filter.icon className={`w-6 h-6 ${activeOrder === idx ? 'text-white' : 'text-yellow-500'}`} />
-            <span className="mt-2 font-medium">{filter.name}</span>
+            <span className="mt-2 font-medium text-[12px]">{filter.name}</span>
           </button>
         ))}
       </div>
+
+
+
+
+
       <div className="p-6 bg-gradient-to-b from-yellow-50 to-white min-h-[200px]">
         {activeOrder === 0 && (
           <div className="animate-fade-in space-y-4">
