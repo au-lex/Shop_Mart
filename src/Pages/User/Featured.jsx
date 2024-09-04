@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TopRated from './TopRated'
 import OngoingSales from './OngoingSales'
+import { Link } from 'react-router-dom'
 
 const Featured = () => {
   const tabList = [
@@ -101,7 +102,7 @@ const Featured = () => {
                   <h3 className="text-[12px] font-semibold mb-1">{product.name}</h3>
                   <img src={product.image} alt={product.name} className="w-[140px] h-[140px] object-cover mb-2 rounded" />
                   <p className="text-yellow-500 font-medium text-[18px]">${product.price}</p>
-                  <p className="text-gray-600 text-[12px]">{product.description.substring(0,60)}... <span className='text-yellow-500 font-bold'>more</span></p>
+                  <p className="text-gray-600 text-[12px]">{product.description.substring(0,60)}... <Link to ={`/details/${product.id}`} className='text-yellow-500 font-bold'>more</Link></p>
                   <button className="mt-2 bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition duration-300">
                     Add to Cart
                   </button>
