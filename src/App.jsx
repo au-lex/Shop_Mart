@@ -58,12 +58,12 @@ const router = createBrowserRouter([
         element: <Setting />,
       },
 
+      {
+        path: "/details/:id",
+        element: <Product_details />,
+      },
         
     ],
-  },
-  {
-    path: "/details",
-    element: <Product_details />,
   },
   {
     path: "/login",
