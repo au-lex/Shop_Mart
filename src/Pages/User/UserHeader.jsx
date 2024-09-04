@@ -34,11 +34,10 @@ const UserHeader = () => {
     setOpenSide(!openSide)
   }
 
-  // Example counts - replace these with actual state or props
+ 
   const cartCount = 3;
   const ordersCount = 5;
-  const savedCount = 10; // Add count for saved items
-
+  const savedCount = 10; 
   const navItems = [
     { name: "Home", path: "/", icon: RiHomeSmileLine },
     { name: "Cart", path: "/cart", icon: RiShoppingCartLine, count: cartCount },

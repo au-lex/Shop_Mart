@@ -139,10 +139,7 @@ const Header = () => {
 </span>
 
         <section className="flex items-center pt-1 space-x-4">
-              {/* <button className="bg-white text-[#198754] px-3 py-2 rounded-md font-medium hover:bg-opacity-90 transition duration-300 flex items-center">
-                <RiCoinLine className="mr-2" />
-                Fund
-              </button> */}
+     
               <button onClick={toggleSidebar} className="logo block border outline-0 rounded-[5px] p-1">
                 <RiMenu5Fill className="text-[1.8rem] tex-white" />
               </button>
