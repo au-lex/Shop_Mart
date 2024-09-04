@@ -18,6 +18,7 @@ import Setting from "./Pages/Settings/Setting";
 import Footer from "./Componet/Footer";
 import UserHeader from "./Pages/User/UserHeader";
 import Loader from "./Componet/Loader";
+import Product_details from "./Reusable/Product_details";
 
 
 const Layout = () => {
@@ -56,7 +57,13 @@ const router = createBrowserRouter([
         path: "/settings",
         element: <Setting />,
       },
+
+        
     ],
+  },
+  {
+    path: "/details",
+    element: <Product_details />,
   },
   {
     path: "/login",
@@ -69,7 +76,9 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
-  },
+  }, 
+  
+
 ]);
 
 export default function App() {

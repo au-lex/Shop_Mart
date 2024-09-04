@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RecentlyAdded = () => {
-  // Sample data for recently added products
+
   const recentProducts = [
     { id: 1, name: "New Arrival 1", price: 24.99, image: "https://shopnest.africa/wp-content/uploads/2024/05/61OQKB0-o4L._AC_UF10001000_QL80_-300x300.jpg", date: "2024-07-25" },
     { id: 2, name: "Fresh Product 2", price: 34.99, image: "https://shopnest.africa/wp-content/uploads/2024/04/61icoXyZ8aL._AC_SL1500_-300x300.jpg", date: "2024-07-26" },

@@ -34,15 +34,16 @@ const Orders = () => {
               <span className="flex justify-between mb-2">
 
 
-                <p className="text-gray-600 text-[12px]">Order ID <span className="o text-[15px] font-bold text-yellow-600">#{order.orderId}</span> </p>
+                <p className="text-gray-600 text-[12px]">Order ID <span className="o text-[12px] font-bold text-yellow-600">#{order.orderId}</span> </p>
 
 
 
-                <p className="text-gray-600 border border-yellow-600 p-1 text-[12px] px-4  rounded-2xl">Arrival Date: {order.dateOfArrival}</p>
+                <p className="text-gray-600 border border-yellow-600 p-1 text-[10px] px-2 rounded-2xl">Arrival Date: {order.dateOfArrival}</p>
               </span>
               <span className="flex justify-between bo mb-4">
-                <p className="text-gray-600 text-[12px] flex border border-yellow-600  items-center p-1 px-2 rounded-2xl"> <span className='mr-1'><FaTruckFast className='text-[16px] text-yellow-600' /></span> {order.location}</p>
-                <p className="text-gray-600 flex text-[15px] pt-1"><span className="b mr-1"><MdLocationPin  
+                <p className="text-gray-600 text-[10px]
+                 flex border border-yellow-600  items-center p-1 px-2 rounded-2xl"> <span className='mr-1'><FaTruckFast className='text-[16px] text-yellow-600' /></span> {order.location}</p>
+                <p className="text-gray-600 flex text-[12px] pt-1"><span className="b mr-1"><MdLocationPin  
                 className='text-[21px] text-yellow-600'
                 /></span> {order.location}</p>
               </span>
@@ -55,7 +56,7 @@ const Orders = () => {
           <img
             src={order.orderImage}
             alt={order.description}
-            className="w-full h-[8rem] object-cover rounded-lg shadow-md"
+            className="w-full h-[8rem] object-cover border border-yellow-600 rounded-lg shadow-md"
           />
         </figure>
         <figcaption className="desc w-1/2">
