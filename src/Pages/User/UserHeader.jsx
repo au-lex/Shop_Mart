@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 
-// import { FaLaptop, FaMobileAlt, FaTabletAlt, FaHeadphones, FaCamera, FaTv,  FaServer } from 'react-icons/fa';
 import { FaLaptop, FaMobileAlt, FaTabletAlt, FaHeadphones, FaCamera, FaTv,  FaServer, FaDesktop } from 'react-icons/fa';
 
 import { 
   RiHomeSmileLine,
   RiShoppingCartLine,
-  RiUserLine,
+
   RiOrderPlayLine,
   RiHeartLine,
-  RiMenu3Line,
+
   RiSearchLine,
 } from "react-icons/ri";
-import { SiShopware } from "react-icons/si";
-import { GrAppsRounded } from "react-icons/gr";
+
 import { IoSettingsOutline } from "react-icons/io5";
-import { AiOutlineAppstore } from "react-icons/ai";
-import { CgMenuGridO } from "react-icons/cg";
+
 import { RiMenu5Fill } from "react-icons/ri";
 import { GiRunningShoe } from "react-icons/gi";
 
@@ -52,7 +49,7 @@ const UserHeader = () => {
 
 
   const products = [
-    { name: 'Laptops', icon: <FaLaptop className="text-blue-500" />, link: '/products/laptop' },
+    { name: 'Laptops', icon: <FaLaptop className="text-blue-500" />, link: '/laptops' },
     { name: 'Mobile Phones', icon: <FaMobileAlt className="text-green-500" />, link: '/products/mobile' },
     { name: 'Tablets', icon: <FaTabletAlt className="text-purple-500" />, link: '/products/tablet' },
     { name: 'Headphones', icon: <FaHeadphones className="text-red-500" />, link: '/products/headphones' },

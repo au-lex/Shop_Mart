@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { FaChevronLeft, FaHeart, FaMinus, FaPlus, FaStar, FaTruck, FaExchangeAlt, FaShieldAlt } from 'react-icons/fa'
 import { useParams, Link } from 'react-router-dom';
-// import Loader from '../Component/Loader';
+
 import { featureProducts } from './Products';
 
 const Product_details = () => {
@@ -45,7 +45,7 @@ const Product_details = () => {
         </div>
 
         <section className="product-details mt-6">
-          <figure className="product-image mb-6">
+          <figure className="product-image mb-6 ">
             <img src={details.image} alt={details.name} 
               className='w-full h-[300px] object-cover rounded-lg '/>
           </figure>
