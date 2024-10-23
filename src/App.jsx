@@ -19,6 +19,7 @@ import Footer from "./Componet/Footer";
 import UserHeader from "./Pages/User/UserHeader";
 import Loader from "./Componet/Loader";
 import Product_details from "./Reusable/Product_details";
+import Laptop from "./Pages/ProductCategory/Laptops/Laptop";
 
 
 const Layout = () => {
@@ -61,6 +62,9 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Product_details />,
+      },{
+        path: "/laptops",
+        element: <Laptop />,
       },
         
     ],
